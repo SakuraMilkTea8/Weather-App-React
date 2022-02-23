@@ -18,9 +18,36 @@ export default function Weather() {
     });
   }
 
+  const [city, setCity] = useState("");
+
+  function search(city) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5bd1b9f8ce5a0967981cb74bc5f85a4a&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Enter a city"
+            autoFocus="on"
+            onChange={handleCityChange}
+          />
+          <input type="submit" value="search" />
+          <input type="submit" value="here" />
+        </form>
+
         <div className="row">
           <div className="col-6">
             <h1>{weatherData.city}</h1>
@@ -66,10 +93,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    let city = "Montreal";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5bd1b9f8ce5a0967981cb74bc5f85a4a&units=metric`;
-    axios.get(url).then(handleResponse);
-
+    search("Tokyo");
     return "Loading...";
   }
 }
