@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import "./Weather.css";
+
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
@@ -52,9 +54,9 @@ export default function Weather() {
           <div className="col-6">
             <h1>{weatherData.city}</h1>
             <div className="todays-weather">
-              <img
-                src={`http://openweathermap.org/img/wn/${weatherData.icon}@2x.png`}
-                alt={weatherData.weather}
+              <WeatherIcon
+                code={weatherData.icon}
+                alt={weatherData.description}
               />
               <div className="todays-weather number">
                 {Math.round(weatherData.temperature)}

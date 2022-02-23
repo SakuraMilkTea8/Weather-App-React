@@ -1,7 +1,7 @@
 .Weather h1 {
   color: #202124;
   font-size: 35px;
-  line-height: 26px;
+  line-height: 20px;
 }
 
 form {
@@ -12,11 +12,10 @@ form {
   text-align: center;
   line-height: 100px;
 }
-.todays-weather img {
+.todays-weather canvas {
   display: inline-block;
-  width: 100px;
   position: relative;
-  top: -10px;
+  top: 10px;
 }
 .todays-weather .number {
   display: inline-block;
