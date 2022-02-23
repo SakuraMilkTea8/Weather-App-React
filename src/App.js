@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import Weather from "./Weather";
 import "./App.css";
 
 function App() {
@@ -37,30 +37,35 @@ function App() {
   }
 
   return (
-    <div className="Weather">
+    <div className="App">
       <div className="container">
-        <h1>Weather App</h1>
         <form onSubmit={showWeather}>
-          <input type="search" onChange={updateCity} />
+          <input
+            type="search"
+            placeholder="Enter a city"
+            autoFocus="on"
+            onChange={updateCity}
+          />
           <input type="submit" value="search" />
+          <input type="submit" value="here" />
         </form>
+        <Weather />
         <p>{message}</p>
-        <footer>
-          This app was coded by{" "}
-          <a href="https://shr.link/3t82s" target="_blank" rel="noreferrer">
-            Ellie
-          </a>
-          <br />
-          and is{" "}
-          <a
-            href="https://github.com/SakuraMilkTea8/Weather-App-React"
-            target="_blank"
-            rel="noreferrer"
-          >
-            open-source
-          </a>
-        </footer>
       </div>
+      <footer>
+        This app was coded by{" "}
+        <a href="https://shr.link/3t82s" target="_blank" rel="noreferrer">
+          Ellie
+        </a>{" "}
+        and is{" "}
+        <a
+          href="https://github.com/SakuraMilkTea8/Weather-App-React"
+          target="_blank"
+          rel="noreferrer"
+        >
+          open-source
+        </a>
+      </footer>
     </div>
   );
 }

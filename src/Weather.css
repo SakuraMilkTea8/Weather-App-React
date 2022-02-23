@@ -1,0 +1,44 @@
+.Weather h1 {
+  color: #202124;
+  font-size: 35px;
+  line-height: 26px;
+}
+
+form {
+  margin: 16px auto 30px auto;
+}
+
+.todays-weather {
+  text-align: center;
+  line-height: 100px;
+}
+.todays-weather img {
+  display: inline-block;
+  width: 100px;
+  position: relative;
+  top: -10px;
+}
+.todays-weather .number {
+  display: inline-block;
+  font-size: 60px;
+  line-height: 100px;
+  margin: 0 10px;
+}
+.todays-weather .letters {
+  display: inline-block;
+  font-size: 25px;
+  position: relative;
+  top: -20px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  text-align: right;
+  list-style-type: none;
+  color: #70757a;
+  font-size: 16px;
+  line-height: 20px;
+}
