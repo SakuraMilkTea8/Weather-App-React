@@ -38,27 +38,29 @@ function App() {
 
   return (
     <div className="Weather">
-      <h1>Weather App</h1>
-      <form onSubmit={showWeather}>
-        <input type="search" onChange={updateCity} />
-        <input type="submit" value="search" />
-      </form>
-      <p>{message}</p>
-      <footer>
-        This app was coded by{" "}
-        <a href="https://shr.link/3t82s" target="_blank" rel="noreferrer">
-          Ellie
-        </a>
-        <br />
-        and is{" "}
-        <a
-          href="https://github.com/SakuraMilkTea8/Weather-App-React"
-          target="_blank"
-          rel="noreferrer"
-        >
-          open-source
-        </a>
-      </footer>
+      <div className="container">
+        <h1>Weather App</h1>
+        <form onSubmit={showWeather}>
+          <input type="search" onChange={updateCity} />
+          <input type="submit" value="search" />
+        </form>
+        <p>{message}</p>
+        <footer>
+          This app was coded by{" "}
+          <a href="https://shr.link/3t82s" target="_blank" rel="noreferrer">
+            Ellie
+          </a>
+          <br />
+          and is{" "}
+          <a
+            href="https://github.com/SakuraMilkTea8/Weather-App-React"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-source
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }
