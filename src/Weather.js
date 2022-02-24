@@ -3,11 +3,14 @@ import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid=5bd1b9f8ce5a0967981cb74bc5f85a4a&units=metric`;
+    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -50,7 +53,6 @@ export default function Weather() {
           <input type="submit" value="search" />
           <input type="submit" value="here" />
         </form>
-
         <div className="row">
           <div className="col-6">
             <h1>{weatherData.city}</h1>
@@ -74,22 +76,7 @@ export default function Weather() {
             </ul>
           </div>
         </div>
-        <div className="row">
-          <div className="col-2">
-            Wed
-            <br />
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
-              alt="Showers"
-            />
-            <br />3 ℃
-          </div>
-          <div className="col-2">Hi</div>
-          <div className="col-2">Hi</div>
-          <div className="col-2">Hi</div>
-          <div className="col-2">Hi</div>
-          <div className="col-2">Hi</div>
-        </div>
+        <WeatherForecast />
       </div>
     );
   } else {

@@ -1,0 +1,14 @@
+.WeatherForecast-day {
+  color: #70757a;
+}
+
+canvas {
+  margin: 10px 0 5px 0;
+  width: 54px;
+}
+
+.WeatherForecast-temperatures {
+  color: #70757a;
+  font-size: 16px;
+  line-height: 20px;
+}
