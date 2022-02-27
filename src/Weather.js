@@ -9,8 +9,6 @@ import "./Weather.css";
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid=5bd1b9f8ce5a0967981cb74bc5f85a4a&units=metric`;
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -21,6 +19,7 @@ export default function Weather() {
       weather: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      coord: response.data.coord,
     });
   }
 
@@ -76,7 +75,7 @@ export default function Weather() {
             </ul>
           </div>
         </div>
-        <WeatherForecast />
+        <WeatherForecast coord={weatherData.coord} />
       </div>
     );
   } else {
