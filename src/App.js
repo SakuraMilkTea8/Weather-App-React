@@ -13,7 +13,7 @@ function App() {
         <a href="https://shr.link/3t82s" target="_blank" rel="noreferrer">
           Ellie
         </a>{" "}
-        and is{" "}
+        , and is{" "}
         <a
           href="https://github.com/SakuraMilkTea8/Weather-App-React"
           target="_blank"
