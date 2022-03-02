@@ -50,7 +50,6 @@ export default function Weather() {
             onChange={handleCityChange}
           />
           <input type="submit" value="search" />
-          <input type="submit" value="here" />
         </form>
         <div className="row">
           <div className="col-6">
